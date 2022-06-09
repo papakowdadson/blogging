@@ -1,0 +1,13 @@
+body{
+    
+    background-image:url('images/download.jpg');
+    background-color: darkgray;
+    background-repeat:repeat;
+    color: #fff;
+    text-align: center;
+
+}
+a,a:hover,a:visited{
+    color:#fff;
+    text-decoration: none;
+}
