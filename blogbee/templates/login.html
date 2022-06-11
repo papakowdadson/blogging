@@ -8,6 +8,11 @@
 </head>
 <body>
     <h1>login</h1>
+    <form class="site-form" method="post" action="login">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="login">
+    </form>
     
 </body>
 </html>

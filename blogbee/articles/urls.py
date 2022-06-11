@@ -17,6 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 
+App_name = 'articles'
 urlpatterns = [
-    path('',views.articles_list, name='articles_list'),
+    path('',views.articles_list, name='list'),
+    path(r'(?P<slug>[\w-]+)/$',views.articles_detail, name='details'),
+    path('logout/',views.logout_view,name='logout'),
 ]

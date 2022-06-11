@@ -1,3 +1,4 @@
+from email.policy import default
 from sqlite3 import Date
 from django.db import models
 from django.forms import SlugField
@@ -8,6 +9,7 @@ class Articles(models.Model):
     Body=models.TextField()
     Slug=models.SlugField()
     Date=models.DateTimeField(auto_now_add='True')
+    Thumb = models.ImageField(default='default.png',blank=True)
     #others would be added later
     def __str__(self):
      return self.Title

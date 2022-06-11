@@ -9,14 +9,30 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-    <hi>Read latest news here</hi>
+    <!-- add the g to png -->
+    <div id="favicon">
+        <h1><a href="{% url 'home' %}"><img  src="{% static 'images/AIMSFAVICON.pn'%}" alt="Loading logo" /></a></h1>
+    </div>
     <div class="Articles">
-        {%for article in Article %}
-        <div class="article">
-            <h1><a href="#">{{article.Title}}</a></h1>
-            <p>{{article.BodySnipet}}</p>
-            <p>{{article.Date}}</p>
-        </div>
+        <nav>
+            <ul>
+                <li>
+                <form class='button-link' action="{% url'logout' %}" method="post">
+                    <button type="submit">logout</button>
+
+                </form>
+
+                </li>
+            </ul>
+        </nav>
+        
+        <h1>Read latest news here</h1>
+        {% for article in Article %}
+            <div class="article">
+                <h1><a href="{% url 'articles:details' slug=article.slug %}">{{article.Title}}</a></h1>
+                <p>{{article.BodySnipet}}</p>
+                <p>{{article.Date}}</p>
+            </div>
         {% endfor %}
     </div>
     

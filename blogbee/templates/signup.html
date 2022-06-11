@@ -8,6 +8,20 @@
 </head>
 <body>
     <h1>signup</h1>
+    <form class="site-form" action="signup"    method="post">
+        {% csrf_token %}
+       <!--  <label for="name">First name:</label>
+        <input name="name " placeholder="" type="text" required/>
+        <label for="name">Sirname:</label>
+        <input name="name" placeholder="" type="text" required>
+        <label for="password">Password</label>
+        <input name="password" type="password" required>
+        <label for="password">Confirm Password</label>
+        <input name="password" type="password" required> -->
+        {{form}}
+        <input type="submit" value="signup">
+
+    </form>
     
 </body>
 </html>
