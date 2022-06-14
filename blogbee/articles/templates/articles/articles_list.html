@@ -16,13 +16,20 @@
     <div class="Articles">
         <nav>
             <ul>
-                <li>
-                <form class='button-link' action="{% url'logout' %}" method="post">
-                    <button type="submit">logout</button>
-
-                </form>
-
-                </li>
+                {% if user.is_authenticated %}
+                    <li>
+                        <form class='button-link' action="{% url 'articles:logout' %}" method="post">
+                            <button type="submit">logout</button>
+                        </form>
+                    </li>
+                    <li><a href="{% url 'articles:create' %}">New Article</a></li>
+                {% else %}
+                    <li>
+                        <form class="site-form" action="{% url 'login' %}" method="post">
+                            <button type="submit">login</button>    
+                        </form>
+                    </li>
+                {% endif %}
             </ul>
         </nav>
         

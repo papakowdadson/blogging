@@ -8,5 +8,30 @@
 </head>
 <body>
     <h1>home page</h1>
+    <div class="loginsignup">
+        <nav>
+            <ul>
+                {% if user.is_authenticated %}
+                    <li>
+                    <form class='button-link' action="{% url 'articles:logout' %}" method="post">
+                        <button type="submit">logout</button>
+                    </form>
+                    </li>
+                {% else %}
+                    <li>
+                        <form class='button-link' action="{% url 'login' %}" method="post">
+                            <button type="submit">login</button>
+                        </form>
+                    </li>
+                    <li>
+                        <form class='button-link' action="{% url 'signup' %}" method="post">
+                            <button type="submit">signup</button>
+                        </form>
+                     </li>
+                {% endif %}
+            </ul>
+        </nav>
+
+    </div>
 </body>
 </html>

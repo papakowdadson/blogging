@@ -4,17 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title>Create</title>
 </head>
 <body>
-    <h1>login</h1>
-    <form class="site-form" method="post" action="login">
+    <form method="POST" action="{% url'articles:create' %}" class="site-form" enctype="multipart/form-data">
         {% csrf_token %}
         {{form}}
-        {% if request.GET.next %}
-            <input type="hidden" name="next" value="{{request.GET.next}}">
-        {% endif %}
-        <input type="submit" value="login">
+        <input type="submit" value="create">
     </form>
     
 </body>
